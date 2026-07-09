@@ -1,7 +1,13 @@
 {
   // Visit https://aka.ms/tsconfig to read more about this file
-  "exclude": ["node_modules"],
-  "include": ["src/**/*"],
+  "exclude": [
+    "node_modules", 
+    "dist",
+  ],
+  "include": [
+    "src/**/*",
+    "test/**/*"
+  ],
   "compilerOptions": {
     // File Layout
     "rootDir": "src",
@@ -11,16 +17,24 @@
     // See also https://aka.ms/tsconfig/module
     "module": "nodenext",
     "target": "esnext",
-    "types": ["node"],
+    
+    "types": [
+      "jest",
+      "node"
+    ],
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
     // and npm install -D @types/node
 
+    
+
     // Other Outputs
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
+
+  
 
     // Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,
@@ -37,10 +51,13 @@
     // Recommended Options
     "strict": true,
     "jsx": "react-jsx",
-    "verbatimModuleSyntax": false,
+    // "verbatimModuleSyntax": false,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
+    "allowJs": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true
   }
 }
